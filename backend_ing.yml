@@ -10,7 +10,7 @@ spec:
     - hosts:
         - astratex.sikademo.com
         - '*.astratex.sikademo.com'
-      secretName: backend.astratex.sikademo.com-tls
+      secretName: astratex.sikademo.com-tls
   rules:
     - host: backend.astratex.sikademo.com
       http:
