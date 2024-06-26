@@ -22,6 +22,10 @@ spec:
           env:
             - name: API_ORIGIN
               value: http://backend
+            - name: FONT_COLOR
+              value: "white"
+            - name: BACKGROUND_COLOR
+              value: "black"
           livenessProbe:
             httpGet:
               path: /api/livez
