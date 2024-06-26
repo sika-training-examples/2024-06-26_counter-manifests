@@ -13,3 +13,7 @@ spec:
           image: debian:12-slim
           command: ["/bin/sh", "-c"]
           args: ["sleep 20"]
+        - name: redis-cleanup
+          image: redis
+          command: ["/bin/sh", "-c"]
+          args: ["redis-cli -h redis FLUSHALL"]
