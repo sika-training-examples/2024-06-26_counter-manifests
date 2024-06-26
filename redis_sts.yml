@@ -4,6 +4,18 @@ metadata:
   name: redis
 spec:
   serviceName: redis
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  volumeClaimTemplates:
+    - metadata:
+        name: redis
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
   selector:
     matchLabels:
       app: redis
@@ -12,6 +24,10 @@ spec:
       labels:
         app: redis
     spec:
+      volumes:
+        - name: redis
+          persistentVolumeClaim:
+            claimName: redis
       containers:
         - name: main
           image: redis
@@ -34,3 +50,6 @@ spec:
           startupProbe:
             tcpSocket:
               port: redis
+          volumeMounts:
+            - mountPath: /data
+              name: redis
