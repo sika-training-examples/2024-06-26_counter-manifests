@@ -13,6 +13,7 @@ spec:
       labels:
         app: backend
     spec:
+      serviceAccountName: backend
       initContainers:
         - name: wait-for-migrations
           image: sikalabs/kubectl
