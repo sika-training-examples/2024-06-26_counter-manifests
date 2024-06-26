@@ -19,6 +19,9 @@ spec:
           ports:
             - name: http
               containerPort: 80
+          env:
+            - name: REDIS
+              value: redis
           resources:
             requests:
               cpu: 20m
