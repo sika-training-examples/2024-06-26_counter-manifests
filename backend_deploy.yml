@@ -24,6 +24,8 @@ spec:
               value: redis
             - name: SLOW_START
               value: "20"
+            - name: EXTRA_TEXT
+              value: "👙"
           resources:
             requests:
               cpu: 100m
