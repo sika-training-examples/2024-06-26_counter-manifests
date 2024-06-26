@@ -33,7 +33,7 @@ spec:
             - name: SLOW_START
               value: "2"
             - name: EXTRA_TEXT
-              value: "👙"
+              value: "👙👙"
           livenessProbe:
             httpGet:
               path: /livez
