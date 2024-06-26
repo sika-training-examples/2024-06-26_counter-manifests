@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: ondrejsika/counter-frontend
+          image: ghcr.io/ondrejsika/counter-frontend
           ports:
             - name: http
               containerPort: 3000
