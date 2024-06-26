@@ -15,11 +15,11 @@ spec:
     spec:
       initContainers:
         - name: wait-for-migrations
-          image: debian:12
+          image: sikalabs/kubectl
           command:
-            - /bin/sh
-            - -c
-            - sleep 20
+            - "/bin/sh"
+            - "-c"
+            - "sleep 2 && kubectl wait --for=condition=complete --timeout=600s job/migrations"
       containers:
         - name: main
           image: ondrejsika/counter
