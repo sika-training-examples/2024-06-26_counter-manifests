@@ -26,6 +26,10 @@ spec:
               value: "20"
             - name: EXTRA_TEXT
               value: "👙"
+          livenessProbe:
+            httpGet:
+              path: /livez
+              port: http
           startupProbe:
             httpGet:
               path: /readyz
