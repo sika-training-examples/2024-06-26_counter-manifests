@@ -13,6 +13,13 @@ spec:
       labels:
         app: backend
     spec:
+      initContainers:
+        - name: wait-for-migrations
+          image: debian:12
+          command:
+            - /bin/sh
+            - -c
+            - sleep 20
       containers:
         - name: main
           image: ondrejsika/counter
