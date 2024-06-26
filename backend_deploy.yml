@@ -26,6 +26,10 @@ spec:
               value: "20"
             - name: EXTRA_TEXT
               value: "👙"
+          startupProbe:
+            httpGet:
+              path: /readyz
+              port: http
           resources:
             requests:
               cpu: 100m
