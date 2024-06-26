@@ -22,6 +22,14 @@ spec:
           env:
             - name: API_ORIGIN
               value: http://backend
+          livenessProbe:
+            httpGet:
+              path: /api/livez
+              port: http
+          startupProbe:
+            httpGet:
+              path: /api/livez
+              port: http
           resources:
             requests:
               cpu: 200m
